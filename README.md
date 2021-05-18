@@ -7,4 +7,10 @@ COIN_MARKET_KEY=
 
 The value of that variable should be a valid key that you can get for free at https://coinmarketcap.com/
 
+# Run
+To run this app, you just simply have to have install node
+
+type "node .\peterWCN.js --help" to get all the info that you need
+
+
 Cheers and enjoy :) !
