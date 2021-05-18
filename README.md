@@ -1,7 +1,7 @@
 # nodejs_prompt_app
 nodejs command line app that gives you the weather, the top news of some online newspaper and cripto info
 
-#node .env
+# node .env
 Create a .env file and add the following variable
 COIN_MARKET_KEY=
 
