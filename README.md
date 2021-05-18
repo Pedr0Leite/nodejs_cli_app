@@ -11,6 +11,6 @@ The value of that variable should be a valid key that you can get for free at ht
 To run this app, you just simply have to have installed on your pc node
 
 -type npm install to have all dependencies installed
--type "node .\peterWCN.js --help" to get all the info that you need
+\n-type "node .\peterWCN.js --help" to get all the info that you need
 
 Cheers and enjoy :) !
