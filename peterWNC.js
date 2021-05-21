@@ -66,6 +66,5 @@ highest temperatures: ${weatherInfo[0]["$"].high} ºC`
       "\n* -c  <criptocurrency symbol>                *" +
       "\n**********************************************"
   );
-  console.log("\nUsage example: node .\/peterWNC.js -w 'Porto'");
-  console.log("\n---+++   Please choose an argument :)   +++---");
+  console.log("\nUsage example: node .\/peterWNC.js -w 'Porto'\n");
 }
