@@ -1,14 +1,6 @@
 #!usr/bin/node
 const yargs = require('yargs');
 
-console.log(
-'**********************************************'+
-'\n*  Welcome to Pedro first CLI app!           *'  +
-'\n* -w  <city name>                            *'  +
-'\n* -n  <newspaper options> (for help, --help) *'  + 
-'\n* -c  <criptocurrency symbol>                *'  + 
-'\n**********************************************');
-
 const options = yargs
 .usage("Usage: -w <city>")
 .option("w", { alias: "city", describe: "Your city", type: "string", demandOption: false })
@@ -46,5 +38,12 @@ highest temperatures: ${weatherInfo[0]['$'].high} ºC`);
         console.log(`${criptoInfo[0][0].name} current value is ${Math.ceil(criptoInfo[0][0].quote.USD.price)} $`);
     })()
 }else{
+    console.log(
+        '\n**********************************************'+
+        '\n*  Welcome to Pedro first CLI app!           *'  +
+        '\n* -w  <city name>                            *'  +
+        '\n* -n  <newspaper options> (for help, --help) *'  + 
+        '\n* -c  <criptocurrency symbol>                *'  + 
+        '\n**********************************************\n');
     console.log('\n---+++   Please choose an argument :)   +++---');
 }
