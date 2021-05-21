@@ -1,4 +1,3 @@
-console.log("CRIPTO STARTS");
 const axios = require("axios");
 const dotenv = require("dotenv").config();
 

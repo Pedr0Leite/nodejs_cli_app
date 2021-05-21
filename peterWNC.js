@@ -5,7 +5,7 @@ console.log(
 '**********************************************'+
 '\n*  Welcome to Pedro first CLI app!           *'  +
 '\n* -w  <city name>                            *'  +
-'\n* -n  <1: JN | 2: Publico | 3: CNN | 4: All> *'  + 
+'\n* -n  <newspaper options> (for help, --help) *'  + 
 '\n* -c  <criptocurrency symbol>                *'  + 
 '\n**********************************************');
 
@@ -13,7 +13,7 @@ const options = yargs
 .usage("Usage: -w <city>")
 .option("w", { alias: "city", describe: "Your city", type: "string", demandOption: false })
 .usage("Usage: -n <newspaper>")
-.option("n", { alias: "option", describe: "Newspaper option", type: "string", demandOption: false })
+.option("n", { alias: "option", describe: "Newspaper option \n 1: JN\n2: Publico\n3: CNN\n4: Noticiais ao Minuto", type: "number", demandOption: false })
 .usage("Usage: -c <cripto symbol>")
 .option("c", { alias: "symbol", describe: "CriptoCurrency Symbol", type: "string", demandOption: false })
 .argv;
@@ -25,12 +25,15 @@ if(argSelected == "-w"){
     process.env.CITY = options.city;
     const getWeather = require('./controllers/weather');
     const weatherInfo = await getWeather();
-    console.log('weatherInfo :', weatherInfo[0]['$']);
+    console.log(
+`Today in ${options.city} the weather is:
+Sky: ${weatherInfo[0]['$'].skytextday} 
+lowest temperatures:  ${weatherInfo[0]['$'].low} ºC
+highest temperatures: ${weatherInfo[0]['$'].high} ºC`);
 })();
 }else if(argSelected == '-n'){
     (async () => {
         process.env.NEWS = options.option;
-        // console.log(' process.env.NEWS :',  process.env.NEWS);
         const getNews = require('./controllers/news');
         const newsInfo = await getNews();
         console.log('newsInfo :', newsInfo);
@@ -38,10 +41,9 @@ if(argSelected == "-w"){
 }else if(argSelected == '-c'){
     (async () => {
         process.env.CRIPTO = options.symbol;
-        // console.log('process.env.CRIPTO :', process.env.CRIPTO);
         const getCripto = require('./controllers/criptocoin');
         const criptoInfo = await getCripto();
-        console.log(`${criptoInfo[0][0].name} current value is ${criptoInfo[0][0].quote.USD.price} $`);
+        console.log(`${criptoInfo[0][0].name} current value is ${Math.ceil(criptoInfo[0][0].quote.USD.price)} $`);
     })()
 }else{
     console.log('\n---+++   Please choose an argument :)   +++---');

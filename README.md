@@ -15,3 +15,5 @@ type npm install to have all dependencies installed
 type "node .\peterWCN.js --help" to get all the info that you need
 
 Cheers and enjoy :) !
+
+Special thanks to https://github.com/kiin
